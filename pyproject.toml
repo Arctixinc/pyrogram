@@ -3,10 +3,11 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "Kurigram"
+name = "Arctixgram"
 dynamic = ["version"]
 description = "Elegant, modern and asynchronous Telegram MTProto API framework in Python for users and bots"
 readme = "README.md"
+readme-content-type = "text/markdown"
 requires-python = ">=3.8"
 authors = [{ name = "Arctixinc", email = "inc.arctix@gmail.com" }]
 maintainers = [{ name = "Arctixinc" }]
@@ -27,6 +28,7 @@ classifiers = [
     "Programming Language :: Python :: Implementation",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
+    "Typing :: Typed",
     "Topic :: Internet",
     "Topic :: Communications",
     "Topic :: Communications :: Chat",
@@ -34,7 +36,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Software Development :: Libraries :: Application Frameworks",
 ]
-dependencies = ["pyaes<=1.6.1", "pysocks<=1.7.1"]
+dependencies = ["pyaes>=1.6.0,<1.7.0", "pysocks>=1.7.0,<1.8.0"]
 license = "LGPL-3.0-or-later"
 license-files = ["COPYING", "COPYING.lesser"]
 keywords = [
@@ -46,14 +48,15 @@ keywords = [
     "client",
     "library",
     "python",
+    "asyncio",
 ]
 
 [project.urls]
-Homepage = "https://Arctixinc.live"
-Documentation = "https://docs.Arctixinc.live"
-Source = "https://github.com/Arctixinc/pyrogram"
-Issues = "https://github.com/Arctixinc/pyrogram/issues"
-Community = "https://t.me/Arctixinc"
+Homepage = "https://arctixinc.live"
+Documentation = "https://docs.arctixinc.live"
+Source = "https://github.com/Arctixinc/Arctixgram"
+Issues = "https://github.com/Arctixinc/Arctixgram/issues"
+Community = "https://t.me/arctixgram_chat"
 
 [project.optional-dependencies]
 dev = [
@@ -63,6 +66,8 @@ dev = [
     "pytest-asyncio<=0.21.1",
     "pytest-cov<=4.1.0",
     "twine<=4.0.2",
+    "black",
+    "isort",
 ]
 
 docs = [
@@ -79,7 +84,7 @@ fast = [
 ]
 
 [tool.hatch.version]
-path = "pyrogram/__init__.py"
+path = "arctixgram/__init__.py"
 
 [tool.hatch.build.hooks.custom]
 
@@ -92,8 +97,11 @@ exclude = [
     "docs/",
     "tests/",
     ".gitignore",
+    "*.pyc",
+    "__pycache__/",
+    ".vscode/",
 ]
 
 [tool.hatch.build.targets.wheel]
 ignore-vcs = true
-packages = ["pyrogram"]
+packages = ["arctixgram"]
