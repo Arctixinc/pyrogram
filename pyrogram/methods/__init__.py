@@ -30,6 +30,7 @@ from .password import Password
 from .payments import Payments
 from .phone import Phone
 from .premium import Premium
+from .pyromod import Pyromod
 from .users import Users
 from .stories import Stories
 from .utilities import Utilities
@@ -46,6 +47,7 @@ class Methods(
     Payments,
     Phone,
     Premium,
+    Pyromod,
     Chats,
     Users,
     Stories,
